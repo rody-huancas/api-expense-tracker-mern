@@ -7,13 +7,3 @@ export const getAllCategories = async (req, res) => {
   );
   res.send(filter);
 };
-
-export const createCategory = async (req, res) => {
-  const create = Categories({
-    type: "Expense",
-    color: "#C43095",
-  });
-  create.save();
-
-  res.json(create);
-};

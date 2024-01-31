@@ -1,19 +1,21 @@
 import "dotenv/config";
 import express from "express";
 import cors from "cors";
-// routes
 import routesCategories from "./routes/route.js";
-// db
 import { connectDB } from "./config/database.js";
+import seedData from "./middlewares/seedData.js";
 
 const PORT = process.env.PORT || 4001;
 const app = express();
 
 connectDB();
 
-// middlewares
+// Middlewares
 app.use(cors());
 app.use(express.json());
+
+// Middleware de siembra (seed)
+seedData();
 
 app.use("/api", routesCategories);
 

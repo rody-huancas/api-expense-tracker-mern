@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { createCategory, getAllCategories } from "../controllers/categories.js";
+import { getAllCategories } from "../controllers/categories.js";
 import {
   createTransaction,
   deleteTransaction,
@@ -11,7 +11,6 @@ const routes = Router();
 
 // categorias
 routes.get("/categories", getAllCategories);
-routes.post("/categories", createCategory);
 
 // transactions
 routes.get("/transactions", getAllTransactions);
