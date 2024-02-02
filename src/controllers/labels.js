@@ -29,7 +29,7 @@ export const getLabels = async (req, res) => {
       );
       res.json(data);
     })
-    .catch((err) => {
-      res.status(400).json("Loop collection error");
+    .catch((error) => {
+      res.status(400).json("Looup Collection Error");
     });
 };

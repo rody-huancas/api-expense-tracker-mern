@@ -1,8 +1,8 @@
 import Transactions from "../models/Transaction.js";
 
 export const getAllTransactions = async (req, res) => {
-  const data = await Transactions.find({});
-  return res.send(data);
+  let data = await Transaction.find({});
+  return res.json(data);
 };
 
 export const createTransaction = async (req, res) => {
@@ -19,7 +19,7 @@ export const createTransaction = async (req, res) => {
 
   const data = await create.save();
 
-  res.send(data);
+  res.json(data);
 };
 
 export const deleteTransaction = async (req, res) => {
@@ -37,6 +37,6 @@ export const deleteTransaction = async (req, res) => {
     }
   } catch (error) {
     console.error(error);
-    return res.status(500).send("Error while deleting transaction record");
+    return res.status(500).json("Error while deleting transaction record");
   }
 };

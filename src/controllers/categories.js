@@ -5,5 +5,5 @@ export const getAllCategories = async (req, res) => {
   let filter = await data.map((v) =>
     Object.assign({}, { type: v.type, color: v.color })
   );
-  res.send(filter);
+  return res.json(filter);
 };
