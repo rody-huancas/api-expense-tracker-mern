@@ -2,21 +2,10 @@ import mongoose from "mongoose";
 
 const transactionSchema = mongoose.Schema(
   {
-    name: {
-      type: String,
-      default: "Anonymous",
-    },
-    type: {
-      type: String,
-      default: "Investment",
-    },
-    amopint: {
-      type: Number,
-    },
-    date: {
-      type: Date,
-      default: Date.now,
-    },
+    name: { type: String, default: "Anonymous" },
+    type: { type: String, default: "Investment" },
+    amount: { type: Number },
+    date: { type: Date, default: Date.now },
   },
   {
     timestamps: true,

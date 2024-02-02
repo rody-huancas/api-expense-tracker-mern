@@ -1,7 +1,7 @@
 import Transactions from "../models/Transaction.js";
 
 export const getAllTransactions = async (req, res) => {
-  let data = await Transaction.find({});
+  let data = await Transactions.find({});
   return res.json(data);
 };
 

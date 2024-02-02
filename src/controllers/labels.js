@@ -11,7 +11,10 @@ export const getLabels = async (req, res) => {
       },
     },
     {
-      $unwind: "$categories_info",
+      $unwind: {
+        path: "$categories_info",
+        preserveNullAndEmptyArrays: true,
+      },
     },
   ])
     .then((result) => {
@@ -23,13 +26,13 @@ export const getLabels = async (req, res) => {
             name: v.name,
             type: v.type,
             amount: v.amount,
-            color: v.categories_info["color"],
+            color: v.categories_info ? v.categories_info["color"] : null,
           }
         )
       );
       res.json(data);
     })
     .catch((error) => {
-      res.status(400).json("Looup Collection Error");
+      res.status(400).json("Lookup Collection Error");
     });
 };
