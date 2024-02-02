@@ -16,14 +16,14 @@ const seedData = async () => {
           color: "#FCBE44",
         },
         {
-          type: "Investment",
+          type: "Expense",
           color: "#C43095",
         },
       ];
 
       await Categories.insertMany(initialCategories);
       console.log("Seed data inserted successfully.");
-    } else {
+    } else {  
       console.log("Data already exists. No need to seed.");
     }
   } catch (error) {

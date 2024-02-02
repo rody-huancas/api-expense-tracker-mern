@@ -9,7 +9,7 @@ export const createTransaction = async (req, res) => {
   if (!req.body)
     return res.status(400).json({ error: "Post HTTP dat not provided" });
   const { name, type, amount } = req.body;
-
+  
   const create = await Transactions.create({
     name,
     type,
